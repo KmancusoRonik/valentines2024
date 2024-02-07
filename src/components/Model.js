@@ -10,7 +10,7 @@ import { useLoader } from '@react-three/fiber'
 
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("./models/MainScene/model_scene.gltf");
+  const { nodes, materials } = useGLTF("./models/MainScene/scene.gltf");
 
   // const envMap = {
   //   ...useTexture({
@@ -93,4 +93,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("./models/MainScene/model_scene.gltf");
+useGLTF.preload("./models/MainScene/scene.gltf");
