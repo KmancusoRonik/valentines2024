@@ -6,7 +6,7 @@ import {PerspectiveCamera, Float, useGLTF, SpotLight, useDepthBuffer ,Shadow, Bo
 
 
 
-let InvisibleOpacity = .1;
+let InvisibleOpacity = 0.0001;
 
 // Ground 
 const GroundPlane = ({ position, color }) => (
