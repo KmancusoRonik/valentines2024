@@ -12,17 +12,6 @@ import { useLoader } from '@react-three/fiber'
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./models/MainScene/scene.gltf");
 
-  // const envMap = {
-  //   ...useTexture({
-  //     map: "./metal/Metal007_1K-JPG_Color.jpg",
-  //     roughnessMap: "./metal/Metal007_1K-JPG_Roughness.jpg",
-  //     metalnessMap: "./metal/Metal007_1K-JPG_Metalness.jpg",
-  //     normalMap: "./metal/Metal007_1K-JPG_NormalGL.jpg",
-  //   }),
-  //   metalness: 1,
-  // };
-
-
   const texture = useCubeTexture(
     ["px.png", "nx.png", "py.png", "ny.png", "pz.png" ,"nz.png"],
     {path: "./Standard-Cube-Map/"}
@@ -36,10 +25,6 @@ export default function Model(props) {
   ])
 
 
-  // const texture = useCubeTexture(
-  //   ["px.png", "nx.png", "py.png", "ny.png", "pz.png" ,"nz.png"],
-  //   {path: "./Standard-Cube-Map/"}
-  // ); 
 
   return (
     <group {...props} dispose={null} scale={5} position={[0,0,2.4]}>

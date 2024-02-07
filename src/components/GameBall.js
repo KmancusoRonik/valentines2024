@@ -16,28 +16,32 @@ const FollowBall = ({valueRef}) => {
 
     useEffect(() => {
       // This is critical we pause the ball from moving..
-      if(valueRef.current !== 'win'){
-          bodyRef.current.sleep(true);
-      }
+        if(valueRef.current !== 'win'){
+        //   bodyRef.current.sleep(true);
+        } else {
+
+        }
     }, []);
     
 
     useFrame((state) => {
         if(!gameReset && valueRef.current == 'win'){
+            // bodyRef.current.sleep(true);
+            // bodyRef.current.setTranslation({ x: 0, y: 18, z: .5 });
+            // bodyRef.current.wakeUp(true);
             // setTimeout(() => {
             //     bodyRef.current.sleep(true);
             //     setTimeout(() => {
             //         bodyRef.current.setTranslation({ x: 0, y: 20, z: 0 });
             //     }, 500);
             // }, 500);
-            bodyRef.current.addForce({ x: 0, y: 0, z: 0 }, true);
+            // bodyRef.current.addForce({ x: 0, y: 0, z: 0 }, true);
         } else {
             const boxPos = bodyRef.current.translation();
             lookAtVec.set(boxPos.x, boxPos.y, boxPos.z);
             cameraVector.lerp(lookAtVec, 0.1);
             state.camera.lookAt(cameraVector);
             state.camera.updateProjectionMatrix();
-
             setGameReset(false);
         }
 
